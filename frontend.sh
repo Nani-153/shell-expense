@@ -40,6 +40,8 @@ VALIDATE $? "Installing Nginx Server"
 systemctl enable nginx &>>$LOG_FILE_NAME
 VALIDATE $? "Enabling Nginx server"
 
+rm -f /etc/nginx/default.d/*.conf &>>$LOG_FILE_NAME
+
 systemctl start nginx &>>$LOG_FILE_NAME
 VALIDATE $? "Starting Nginx Server"
 
